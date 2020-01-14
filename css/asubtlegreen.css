@@ -26,7 +26,7 @@ body {
 	height:99px;
 	margin-left:29px;
 	margin-right:21px;
-	background: url(header.png) no-repeat;
+	background: url(../images/header.png) no-repeat;
 }
 
 #page
@@ -36,7 +36,7 @@ body {
   height: 100%;
   position: relative;
   overflow: hidden;
-  background: #252F33 url(background.png) repeat-y;
+  background: #252F33 url(../images/background.png) repeat-y;
   width: 730px;
 }
 
@@ -97,7 +97,7 @@ font-weight:bold;
 line-height:21px;
 height:auto;
 margin-right:-3px;
-background-image:url(links_branch.png);
+background-image:url(../images/links_branch.png);
 background-repeat:no-repeat;
 text-align:right;
 float:right;
@@ -127,7 +127,7 @@ margin-right:5px;
 	height:57px;
 	margin-left:29px;
 	margin-right:21px;
-	background: url(bar.png) no-repeat;
+	background: url(../images/bar.png) no-repeat;
 }
 
 .menuLink
@@ -145,7 +145,7 @@ margin-right:5px;
 
 .menuLink:hover
 {
-	background: url(bar2.png) repeat-x;
+	background: url(../images/bar2.png) repeat-x;
 }
 
 a
@@ -164,7 +164,7 @@ height:500px;
 
 	width: 730px;
 	height:60px;
-	background: url(footer.png) no-repeat;
+	background: url(../images/footer.png) no-repeat;
 text-align:center;
 font-size:10px;
 color:#667765;

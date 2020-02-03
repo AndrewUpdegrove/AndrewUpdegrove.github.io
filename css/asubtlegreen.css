@@ -180,24 +180,31 @@ div.articleContent a {
 #pageContent
 {
 width: 680px;
-height:100%;
+height: 1080px;
 }
 
 #footer {
-
 	width: 730px;
 	height:60px;
 	background: url(../images/footer.png) no-repeat;
-text-align:center;
-font-size:10px;
-color:#667765;
-padding-top:34px;
+	text-align:center;
+	font-size:10px;
+	color:#667765;
+
 }
 
 #footer a
 {
 font-size:10px;
 color:#667765;
+}
+
+hr.bottom {
+	border-top: 3px solid #1d2629;
+	background-color: #1d2629;
+	width:680;
+	margin-left: 5px;
+	margin-top: 15px;
 }
 
 html, body {

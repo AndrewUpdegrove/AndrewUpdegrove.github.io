@@ -167,6 +167,23 @@ margin-right:5px;
 	background: url(../images/bar2.png) repeat-x;
 }
 
+.links
+{
+	text-align: center;
+}
+
+div.links a {
+	color:#0000EE;
+	font-size:14px;
+	font-weight:bold;
+}
+
+div.links ul{
+	list-style-type: none;
+	display:table;
+	margin:0 auto;
+}
+
 a
 {
 text-decoration:none;

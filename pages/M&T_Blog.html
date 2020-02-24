@@ -26,6 +26,11 @@
    </ul>
  </div>
     <div class="articleContent">
+      <div class="postTitle">Why won't you work???</div>
+      <div class="postContent">
+        Aubio has several basic structure types that handles all the identification. And I have figured out how they work! Well really just the one that identifies the pitch. So far I feel like the only two structures I will need to use are the pitch and onset identifications. I can not get the detection structure to work. It is not properly identifying when a note starts. It says if it detects there is a note it will return a noted between 1 and 2 to give the relative distance along the input hopper. Right now it is returning the number 4 on the first input hopper. I assume I need to play with some of the thresholds, like silence and peak threshold. I will be seaking help from Rob to find the issue.
+
+      </div>
       <div class="postTitle">A Hello World Start... Almost</div>
       <div class="postContent">
         Aubio has been much more difficult to work with than I though it would be. It has all it's own types, and data sturctures. I thought I was close to getting basic pitch detection working, but I can't figure out what to do with the values I get. I also realized last Thursday that Aubio has no midi playback, or any sort of playback whatsoever. So I will have to use a different package for that. Fortunately, when I was first looking around I found a C++ package called The Synthesis Toolkit. It is all based around midi sounds, and has a lot of instrument options. Currently, I am just trying to work with the software package and having a rough time. I wasn't able to get as much done as I would have like because I went away for the 3-day weekend, I am ready to make this work.

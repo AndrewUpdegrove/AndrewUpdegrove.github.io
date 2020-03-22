@@ -20,14 +20,79 @@
    </div>
    <div id="pageContent">
    <div class="articleTitle">Trying Out Web Audio</div>
- </div>
     <div class="articleContent">
+      <div class="postContent">
+          Audio from https://www.bensound.com
+      </div>
+      <audio src="../images/bensound-memories.mp3" type="audio/mpeg"></audio>
+      <button style="align:center" data-playing="false" role="switch" aria-checked="false">
+        <span>Play/Pause</span>
+      </button>
+      <p>Volume: </p><input type="range" id="volume" min="0" max="2" value="1" step="0.01">
+      <p>Panning: </p><input type="range" id="panner" min="-1" max="1" value="0" step="0.01">
     </div>
        <hr class="bottom">
    </div>
-   <div id="footer">
-
-   </div>
 </div>
+<script type="text/javascript">
+  console.clear();
+
+  const AudioContext = window.AudioContext || window.webkitAudioContext;
+
+  const audioContext = new AudioContext();
+
+  //get the audio element
+  const audioElement = document.querySelector('audio');
+  //pass it into the audio context
+  const track = audioContext.createMediaElementSource(audioElement);
+
+  //select the play button
+  const playButton = document.querySelector('button');
+
+  playButton.addEventListener('click', function() {
+
+    //check if context is in suspended state (autoplay policy)
+    if (audioContext.state === 'suspended'){
+      audioContext.resume();
+    }
+
+    //play or pause track depending on state
+    if (this.dataset.playing === 'false') {
+      audioElement.play();
+      this.dataset.playing = 'true';
+    } else if (this.dataset.playing === 'true') {
+      audioElement.pause();
+      this.dataset.playing = 'false';
+    }
+  }, false);
+
+  audioElement.addEventListener('ended', () => {
+    playButton.dataset.playing = 'false';
+  }, false);
+
+  const gainNode = audioContext.createGain();
+  track.connect(gainNode).connect(audioContext.destination);
+
+  const volumeControl = document.querySelector('#volume');
+  volumeControl.addEventListener('input', function() {
+    gainNode.gain.value = this.value;
+  }, false);
+
+
+  const pannerOptions = { pan: 0 };
+  const panner = new StereoPannerNode(audioContext, pannerOptions);
+  const pannerControl = document.querySelector('#panner');
+
+
+  pannerControl.addEventListener('input', function(){
+    panner.pan.value = this.value;
+  }, false);
+
+  //track.connect(gainNode).connect(audioContext.destination);
+
+  //connect source to destination
+  track.connect(gainNode).connect(panner).connect(audioContext.destination);
+</script>
+
 </body>
 </html>

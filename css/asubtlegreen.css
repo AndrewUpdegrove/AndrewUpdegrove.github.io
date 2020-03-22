@@ -94,7 +94,8 @@ font-weight:bold;
 	position:relative;
 	font-family:Verdana, Arial, Helvetica, sans-serif;
 	font-size:14px;
-	color:#F4EBD9;
+	color:#000000;
+	/*F4EBD9*/
 }
 
 .articleContent

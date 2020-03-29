@@ -27,9 +27,17 @@
    </ul>
  </div>
     <div class="articleContent">
+      <div class="postTitle">The Essential to My Project in Web Audio 3/29</div>
+      <div class="postContent">
+        So now that I have web audio working on my website, the future now includes inplementing my project idea as a web app. The essential componnents are pitch identification, onset identification (for the start of notes and their finishes), and some way to record the information and convert it to some form of common format (probably music xml).
+
+        I have found some code for a potential <a href="https://github.com/cwilso/PitchDetect">pitch detection software</a> on github. I'm not sure if there is a way to include this as a module or if I just copy the code over. The options for onset detection are <a href="https://github.com/Keavon/Web-Onset">Web audio specific one</a> or <a href="https://editor.p5js.org/tianrandesign/sketches/BJb4jnHQg">this generic javascript one</a>. The web audio specific one looks like it is too complicated for my needs, but it is already setup to work with web audio. The generic javascript one looks like it is more appropriately scoped, but I would have to do all the web audio setup myself. This week I will try to get the pitch detection working as I think that will be quicker, but I will move on to onset detection shortly after.
+
+        I will do all the transfering to musicxml data type by myself unless there is a super easy module to do it for me.
+      </div>
       <div class="postTitle">Web Audio Start 3/22</div>
       <div class="postContent">
-        I have created another tab on my website for the work I am going to be doing with Web Audio. As of today I have it playing some lovely royalty free music. I followed <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API" target="_blank">this tutorial</a> for setting up this very basic playback. This took me about an hour and a half (less if I would stop spelling things wrong ¯\_(ツ)_/¯). From here I am going to look into how to including libraries/packages in web audio. I assume it integrates with the javascript, but this is a whole new world for me. 
+        I have created another tab on my website for the work I am going to be doing with Web Audio. As of today I have it playing some lovely royalty free music. I followed <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API" target="_blank">this tutorial</a> for setting up this very basic playback. This took me about an hour and a half (less if I would stop spelling things wrong ¯\_(ツ)_/¯). From here I am going to look into how to including libraries/packages in web audio. I assume it integrates with the javascript, but this is a whole new world for me.
       <div class="postTitle">Midterm Presentation Feedback 3/20</div>
       <div class="postContent">
         I presented my progress on March 2nd and it performed as I expected it to. Unfortunately my expectations were not for it to identify pitch. Currently onset detection works perfectly, but pitch detection is not. This is an essential component of my project so Rob recommended that I pivot. This was not wasted time, as this is a part of an design/iteration process. Rob suggested looking into possibly using Web Audio, as a lot of people are currently working on it (so I can find help online) and it can then run as a web application. Another suggestion was to look closer into The Synthesis Toolkit (STK), as it might have pitch detection buried in it somewhere.

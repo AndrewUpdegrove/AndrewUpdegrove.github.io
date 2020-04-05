@@ -198,7 +198,7 @@ div.articleContent a {
 #pageContent
 {
 width: 680px;
-height: 1080px;
+height: 100%;
 }
 
 #footer {

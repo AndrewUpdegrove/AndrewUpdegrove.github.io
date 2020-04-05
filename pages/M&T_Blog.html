@@ -27,6 +27,23 @@
    </ul>
  </div>
     <div class="articleContent">
+      <div class="postTitle">Adding Pitch Detection and I don't know Javascript 4/5</div>
+      <div class="postContent">
+        So first step of the new project was getting pitch detection working. This was simple enough, I just had to add the the module I mentioned in last week's post into my webpage. This went swimmingly besides issues with CSS, which I chose not to address because that is not the point of this class. So I got that working with all three forms of audio, live input, recorded sample, and an oscilltor.<br>
+      <br>
+        Later on in the week I tried to make the program to track each new pitch that was made and hold onto it to display it when the recording was done. This kind of worked, but also didn't work at all. I am fairly certain the path I am taking is right, but I think fundamentally I am doing the wrong thing. I believe the issue is arrising from an error with pass by reference vs pass by value. Currently I have written:<br>
+        <br>
+        <code>
+        var note =  noteFromPitch( pitch );<br>
+     		if (currNoteArray.length == 0) {<br>
+     			currNoteArray.push(note);<br>
+     		} else if (currNoteArray[currentNoteArray.length - 1] != note){<br>
+     			currNoteArray.push(note);<br>
+     		}
+      </code><br>
+      <br>
+      Pitch is a frequency and note is a midi note value. Hypothetically, this code should add the value of the midi note value to the end of my note array if it is the first one or if it is different from the last note added to the array. I think what might be happening, is an error with passing by reference. I would like currNoteArray to store just the value of note, but I think it is storing the address location which is messing up displaying the note later on in the program. I tried googling a solution to it, but I think I can't find a solution because I am thinking in a c++ mindset and not a scripting mindset. I was going to get Rob's opinion because I can't seem to get it to work.
+      </div>
       <div class="postTitle">The Essential to My Project in Web Audio 3/29</div>
       <div class="postContent">
         So now that I have web audio working on my website, the future now includes inplementing my project idea as a web app. The essential componnents are pitch identification, onset identification (for the start of notes and their finishes), and some way to record the information and convert it to some form of common format (probably music xml).

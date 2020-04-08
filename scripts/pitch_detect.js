@@ -153,7 +153,7 @@ function toggleLiveInput() {
 				//write out the notes that were recorded
 				var toScreen = "";
 				for (var i = 0; i < currNoteArray.length; i ++){
-					toScreen += currNoteArray[i] + " 0->";
+					toScreen += currNoteArray[i] + " -> ";
 				}
 				document.getElementById( "notesPlayed" ).innerHTML = toScreen;
 				currNoteArray = [];
@@ -187,7 +187,7 @@ function togglePlayback() {
 				//write out the notes that were recorded
 				var toScreen = "";
 				for (var i = 0; i < currNoteArray.length; i ++){
-					toScreen += currNoteArray[i] + " 0->";
+					toScreen += currNoteArray[i] + " -> ";
 				}
 				document.getElementById( "notesPlayed" ).innerHTML = toScreen;
 				currNoteArray = [];
@@ -339,15 +339,17 @@ function updatePitch( time ) {
 		detuneAmount.innerText = "--";
  	} else {
 	 	detectorElem.className = "confident";
-	 	pitch = ac;
+	 	var pitch = ac;
 	 	pitchElem.innerText = Math.round( pitch ) ;
 	 	var note =  noteFromPitch( pitch );
-		
+
+
 		if (currNoteArray.length == 0) {
 			currNoteArray.push(note);
-		} else if (currNoteArray[currentNoteArray.length - 1] != note){
+		} else if (currNoteArray[currNoteArray.length - 1] != note){
 			currNoteArray.push(note);
 		}
+
 
 		noteElem.innerHTML = noteStrings[note%12] + "" + Math.floor((note-12)/12);
 		var detune = centsOffFromPitch( pitch, note );
@@ -361,7 +363,9 @@ function updatePitch( time ) {
 				detuneElem.className = "sharp";
 			detuneAmount.innerHTML = Math.abs( detune );
 		}
+		delete note;
 	}
+
 
 	if (!window.requestAnimationFrame)
 		window.requestAnimationFrame = window.webkitRequestAnimationFrame;

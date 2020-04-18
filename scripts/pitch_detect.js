@@ -192,8 +192,8 @@ function togglePlayback() {
 				document.getElementById( "notesPlayed" ).innerHTML = toScreen;
 				currNoteArray = [];
 
-		if (!window.cancelAnimationFrame)
-			window.cancelAnimationFrame = window.webkitCancelAnimationFrame;
+				if (!window.cancelAnimationFrame)
+					window.cancelAnimationFrame = window.webkitCancelAnimationFrame;
         window.cancelAnimationFrame( rafID );
         return "start";
     }

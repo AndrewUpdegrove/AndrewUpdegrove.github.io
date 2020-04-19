@@ -18,6 +18,25 @@ body {
   margin: 0 auto 0 auto;
  text-align:left;}
 
+ pre {
+    background: #f4f4f4;
+    border: 1px solid #ddd;
+    border-left: 3px solid #f36d33;
+    color: #666;
+    page-break-inside: avoid;
+    font-family: monospace;
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 1px;
+		margin-top: 1px;
+    max-width: 90%;
+    overflow: auto;
+    padding: 1em 1.5em;
+    display: block;
+    word-wrap: break-word;
+}
+
+
 #header {
 	position:relative;
 	width: 680px;

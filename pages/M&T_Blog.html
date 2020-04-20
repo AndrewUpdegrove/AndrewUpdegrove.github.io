@@ -67,9 +67,9 @@ findOnsetPitch(buffer){
         This week I started looking at <a href="https://github.com/Keavon/Web-Onset" target="_blank">this onset detection</a>. This method uses <a href="https://en.wikipedia.org/wiki/Spectral_flux" target="_blank">spectral flux</a>. Spectral flux is a measure of how quicly the power spectrum of a signal is changing. The power is found by performing a <a href="https://en.wikipedia.org/wiki/Fast_Fourier_transform" target="_blank">fast fourier transform</a> and then summing the total value of the signal. <br>
         <br>
         The method that was implemented by default only summed increases in the energy from the previous bin. The application provides a lovely visualization. This is the visualization with the current method for 3 sine wave blips.<br>
-        <img src="../images/positiveFlux.png" alt="Positive Increases of Spectral Flux" style="width:467px;height:413px"><br>
+        <img src="../images/positiveFlux.PNG" alt="Positive Increases of Spectral Flux" style="width:467px;height:413px"><br>
         The red line is the input signal. The green line is the spectral flux. The purple line is the activation threshold determined by the local average of the signal. The blue line indicates where the spectral flux exceeded the threshold value. As you can see, it only activates on the onset of the note not when it ends. My thought was to change the inclusion of only increases to both increases and decreases by using absolute value. <br>
-        <img src="../images/absoluteValueFlux.png" alt="Positive Increases of Spectral Flux" style="width:467px;height:413px"><br>
+        <img src="../images/absoluteValueFlux.PNG" alt="Positive Increases of Spectral Flux" style="width:467px;height:413px"><br>
         This method is able to capture the onset and offset of notes. Well maybe not notes but definitely sine waves. There is some error with the middle of the notes, but that was present in the original method so I will have to dive into the algorithm further. I have not implemented this into my tool displayed on the website. I have been playing with this offline.
       </div>
       <div class="postTitle">Adding Pitch Detection and I don't know Javascript 4/5</div>

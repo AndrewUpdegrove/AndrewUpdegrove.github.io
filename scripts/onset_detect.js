@@ -1,14 +1,4 @@
-function find_onsets(samples, spectralflux, threshold, peaks, rootMeanSquare) {
-	var buffer;
-
-
-	// Get a buffer of samples from the left channel
-	var bufferSamples = samples.getChannelData(0);
-
-	const THRESHOLD_WINDOW_SIZE = 10;
-	const MULTIPLIER            = 1.5;
-	const SAMPLE_SIZE           = 1024;
-	const FFT2SIZE              = 1024;
+function find_onsets(bufferSamples, spectralFlux, threshold, peaks, rootMeanSquare) {
 
 	var fft  = new FFT(SAMPLE_SIZE, 44100);
 	var fft2 = new FFT(FFT2SIZE,    44100 / SAMPLE_SIZE);
@@ -87,11 +77,4 @@ function find_onsets(samples, spectralflux, threshold, peaks, rootMeanSquare) {
 			peaks.push(0);
 		}
 	}
-
-	source.connect(context.destination);
-	source.buffer = samples;
-	source.start();
-	startTime = context.currentTime;
-
-	visualize(bufferSamples, spectralFlux, threshold, peaks, peakFreq, rootMeanSquare);
 }

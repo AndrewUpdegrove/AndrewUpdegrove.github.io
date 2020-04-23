@@ -3,6 +3,16 @@ text-align: center;
 }
 p {text-align: left;}
 
+table, th, td {
+	border: 2px solid black;
+	border-collapse: collapse;
+}
+
+th, td {
+	padding: 5px;
+	text-align: left;
+}
+
 body {
 	margin: 0;
 	padding: 0;

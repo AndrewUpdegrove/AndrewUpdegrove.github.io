@@ -20,7 +20,8 @@
  </style>
 </head>
 <body>
-  <script src="../scripts/pitch_detect.js"></script>
+  <script type="text/javascript" src="../scripts/DSP.js"></script>
+  <script type="text/javascript" src="../scripts/detection.js"></script>
 <div id="page">
    <div id="header">
      <div class="title">Andrew Updegrove</div>
@@ -37,18 +38,17 @@
    <div class="articleTitle">Trying Out Web Audio</div>
    <div class="articleContent">
       <button onclick="this.innerText = togglePlayback()">use demo audio</button>
-
-      <div id="detector" class="vague">
-        <div class="pitch"><span id="pitch">--</span>Hz</div>
-        <div class="note"><span id="note">--</span></div>
-        <canvas id="output" width=300 height=42></canvas>
-        <div id="detune"><span id="detune_amt">--</span><span id="flat">cents $#9837;</span><span id="sharp">cents &#9839;</span></div>
+      <table id="notesPlayed" style="width:100%">
+        <thead>
+        <tr>
+          <th>Frequency</th>
+          <th>Start Time</th>
+          <th>Duration</th>
+        </tr>
+      </table>
+      <div id ="checker" style="margin-top:25px">
       </div>
-
-      <div id="notesPlayed" style="margin-top:25px">
-        No notes played.
-      </div>
-   </div>
+    </div>
  </div>
 </div>
 </body>

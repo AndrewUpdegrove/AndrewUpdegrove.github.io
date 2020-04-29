@@ -20,7 +20,8 @@ SOFTWARE.
 
 window.AudioContext = window.AudioContext || window.webkitAudioContext;
 
-const MUSIC_URL = "../sounds/sin_wave_with_cut.wav";
+//const MUSIC_URL = "../sounds/sin_wave_with_cut.wav";
+const MUSIC_URL = "../sounds/singing_2.wav";
 
 const THRESHOLD_WINDOW_SIZE = 10;
 const MULTIPLIER            = 1.5;
@@ -48,6 +49,9 @@ function Note(frequency, start_time){
 	};
 	this.durationTime = function(sample_rate){
 		return (this.end - this.start) / sample_rate;
+	};
+	this.startTime = function(sample_rate){
+		return (this.start) / sample_rate;
 	};
 }
 
@@ -207,7 +211,7 @@ function main(){
 		var cell2 = row.insertCell(1);
 		var cell3 = row.insertCell(2);
 		cell1.innerHTML = notes_played[j].freq;
-		cell2.innerHTML = notes_played[j].start;
+		cell2.innerHTML = notes_played[j].startTime(audioContext.sampleRate);
 		cell3.innerHTML = notes_played[j].durationTime(audioContext.sampleRate);
 	}
 
